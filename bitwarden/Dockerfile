@@ -4,7 +4,7 @@ ARG BUILD_FROM=hassioaddons/debian-base:3.2.1
 ###############################################################################
 ARG BITWARDEN_ARCH
 # hadolint ignore=DL3006
-FROM "bitwardenrs/server:1.16.0${BITWARDEN_ARCH}" as bitwarden
+FROM "bitwardenrs/server:latest${BITWARDEN_ARCH}" as bitwarden
 
 ###############################################################################
 # Build the actual add-on.
@@ -45,20 +45,20 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Bitwarden RS" \
+    io.hass.name="Artemis Bitwarden RS" \
     io.hass.description="Open source password management solution" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.opencontainers.image.title="Bitwarden RS" \
+    org.opencontainers.image.title="Artemis Bitwarden RS" \
     org.opencontainers.image.description="Open source password management solution" \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
     org.opencontainers.image.authors="Franck Nijhof <frenck@addons.community>" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://addons.community" \
-    org.opencontainers.image.source="https://github.com/hassio-addons/addon-bitwarden" \
-    org.opencontainers.image.documentation="https://github.com/hassio-addons/addon-bitwarden/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/nubicula/addon-bitwarden" \
+    org.opencontainers.image.documentation="https://github.com/nubicula/addon-bitwarden/blob/master/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
